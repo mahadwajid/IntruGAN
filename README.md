@@ -4,17 +4,18 @@
 
 **IntruGAN is a GAN-powered deep learning system that strengthens IoT security by balancing network data and detecting cyber intrusions with higher accuracy.**
 
-IntruGAN addresses the critical challenge of imbalanced network security datasets by leveraging Generative Adversarial Networks (GANs) to create synthetic attack samples, thereby improving the accuracy of intrusion detection systems. The platform provides a complete end-to-end solution from data upload to real-time threat detection with an intuitive web interface.
+IntruGAN addresses the critical challenge of imbalanced network security datasets by leveraging Generative Adversarial Networks (GANs) to create synthetic attack samples, thereby improving the accuracy of intrusion detection systems. The platform provides a complete end-to-end solution from data upload to real-time threat detection with an intuitive web interface, specifically optimized for the UNSW-NB15 dataset.
 
 ## 🎯 Key Features
 
 - **🔐 Secure Authentication**: JWT-based user management with bcrypt password hashing
-- **📊 Intelligent Data Analysis**: Automatic dataset profiling and imbalance detection
+- **📊 Intelligent Data Analysis**: Automatic UNSW-NB15 dataset profiling and imbalance detection
 - **⚙️ Advanced Preprocessing**: Configurable data cleaning and feature engineering pipeline
 - **🤖 GAN-Powered Balancing**: Synthetic data generation for minority attack classes
 - **🛡️ Real-time Detection**: XGBoost-based intrusion detection with detailed metrics
 - **📈 Interactive Visualizations**: Multi-chart data analysis and result presentation
 - **📁 File Management**: Drag-and-drop CSV upload with progress tracking
+- **🎯 UNSW-NB15 Optimized**: Specifically designed for UNSW-NB15 dataset analysis
 
 ## 🛠️ Technology Stack
 
@@ -163,6 +164,29 @@ idsfypnew-main/
 - **MongoDB** (local installation or MongoDB Atlas account)
 - **npm** or **yarn** package manager
 
+### 📊 Dataset Information
+
+IntruGAN is designed to work with the **UNSW-NB15** dataset, a comprehensive network security dataset for intrusion detection research.
+
+#### **UNSW-NB15 Dataset**
+- **Source**: University of New South Wales (UNSW)
+- **Purpose**: Network intrusion detection and security research
+- **Format**: CSV files containing network traffic data
+- **Features**: 42 engineered features for intrusion detection
+- **Classes**: Normal traffic and various attack types
+
+#### **Dataset Access**
+You can download the UNSW-NB15 dataset from:
+- **Google Drive**: [UNSW_NB15 Dataset](https://drive.google.com/drive/folders/1n5momPW5aNJpPNvhkv3kfNyv41ti6dyI?usp=sharing)
+- **Alternative Sources**: UNSW official repository or academic datasets
+
+#### **Dataset Structure**
+The UNSW-NB15 dataset includes:
+- **Training Set**: `UNSW_NB15_training-set.csv`
+- **Testing Set**: `UNSW_NB15_testing-set.csv`
+- **Feature Descriptions**: Documentation of 42 features
+- **Attack Categories**: Various attack types for classification
+
 ### Backend Setup
 
 1. **Clone the repository**
@@ -219,12 +243,14 @@ idsfypnew-main/
 - JWT tokens are automatically managed for session persistence
 
 ### 2. Dataset Upload & Analysis
-- Upload CSV datasets via drag-and-drop interface
+- Upload UNSW-NB15 CSV datasets via drag-and-drop interface
 - Automatic dataset analysis provides:
   - Dataset size and attribute count
   - Class distribution analysis
   - Imbalance detection
   - Normal vs. attack sample identification
+  - Feature correlation analysis
+  - Attack type distribution visualization
 
 ### 3. Data Preprocessing
 - Configure preprocessing options:
@@ -264,10 +290,11 @@ idsfypnew-main/
 ## 🎨 Features in Detail
 
 ### **Data Analysis Pipeline**
-- **Automatic Target Detection**: Identifies `attack_cat` or `label` columns
+- **Automatic Target Detection**: Identifies `attack_cat` or `label` columns from UNSW-NB15
 - **Class Distribution Analysis**: Normal vs. attack sample counting
 - **Imbalance Assessment**: Determines if dataset needs balancing
-- **Feature Engineering**: 42-feature selection for optimal performance
+- **Feature Engineering**: 42-feature selection optimized for UNSW-NB15
+- **Attack Type Analysis**: Detailed breakdown of different attack categories
 
 ### **GAN Implementation**
 - **Generator Network**: Creates synthetic attack samples
@@ -326,6 +353,12 @@ CMD ["npm", "start"]
 3. Commit your changes (`git commit -m 'Add amazing feature'`)
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
+
+## 📚 Dataset References
+
+- **UNSW-NB15 Dataset**: [Google Drive Link](https://drive.google.com/drive/folders/1n5momPW5aNJpPNvhkv3kfNyv41ti6dyI?usp=sharing)
+- **Original Paper**: Moustafa, N., & Slay, J. (2015). UNSW-NB15: a comprehensive data set for network intrusion detection systems (UNSW-NB15 network data set).
+- **Dataset Citation**: If you use this dataset in your research, please cite the original UNSW-NB15 paper.
 
 
 ## 🙏 Acknowledgments
